@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Choose Account Type{% endblock %}
+
+{% block content %}
+<div class="container-fluid vh-100 px-0 d-flex flex-column flex-md-row">
+
+ <!-- LEFT SECTION: Background with quote and logo -->
+<div class="col-md-6 d-none d-md-flex align-items-center justify-content-center"
+style="background: url('{% static 'assets/img/Rectangle_36.png' %}') center center / cover no-repeat; position: relative;">
+
+<!-- Dark overlay -->
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); z-index: 1;"></div>
+
+<!-- Content inside the overlay -->
+<div class="p-4 text-white" style="max-width: 400px; z-index: 2;">
+
+<!-- Logo -->
+<div class="mb-4">
+ <img src="{% static 'assets/img/logo_1.png' %}" alt="OnTap Logo" style="height: 40px;">
+</div>
+
+<!-- Quote Box -->
+<div class="bg-transparent border-0">
+ <p class="fst-italic text-white mb-4">“I love how easy it was to customize my OnTap card. It matches my brand perfectly, and people are always impressed when I share my details with just a tap!”</p>
+ <p class="fw-semibold text-white">Melissa K., Creative Director, MascotAI</p>
+</div>
+
+</div>
+</div>
+
+
+  <!-- RIGHT: Choose account type -->
+  <div class="col-md-6 d-flex align-items-center justify-content-center bg-white">
+    <div style="max-width: 420px; width: 100%;" class="p-4">
+      <p class="text-end small">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Sign in</a></p>
+      <h4 class="fw-bold mb-2">Welcome to OnTap!</h4>
+      <p class="text-muted mb-4">To begin this journey, tell us what type of account you'd be opening.</p>
+
+      <a href="{% url 'register_individual' %}" class="btn btn-outline-primary w-100 mb-3 py-3 text-start">
+        <i class="bi bi-person me-2"></i> Individual
+        <span class="d-block small text-muted ms-4">For personal branding and solo use</span>
+      </a>
+
+      <a href="{% url 'register_business' %}" class="btn btn-outline-primary w-100 py-3 text-start">
+        <i class="bi bi-building me-2"></i> Business / Team
+        <span class="d-block small text-muted ms-4">For managing multiple cards under one organization</span>
+      </a>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+

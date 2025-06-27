@@ -1,0 +1,141 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block title %}Enter OTP{% endblock %}
+
+{% block content %}
+
+<section class="register-section d-none d-md-block">
+  <div class="container-fluid g-0">
+    <div class="row g-0">
+
+      <!-- Left section -->
+      <div class="col-md-6 d-flex align-items-start justify-content-center flex-column"
+      style="background: url('{% static 'assets/img/Rectangle_36.png' %}') center center / cover no-repeat; padding: 2rem; height:100vh;">
+      <div class="mb-4">
+        <img src="{% static 'assets/img/logo.png' %}" alt="OnTap Logo" style="height: 40px;">
+      </div>
+      <div style="margin-top: 6rem;">
+        <img src="{% static 'assets/img/quotes.png' %}" alt="quotes"
+                   style="height:20px; width:20px; border-radius:50%; margin-bottom: 16px;">
+                   
+        <p class="text-white">I love how easy it was to customize my OnTap card. It matches my brand perfectly, and people are always impressed when I share my details with just a tap!"</p>
+        <p class="text-white fw-bold">Melissa K., Creative Director, MascotAI
+          <img src="{% static 'assets/img/circle_check.png' %}" alt="Melissa Photo" style="height: 20px; width: 20px; border-radius: 50%; margin-left: 8px;">
+
+        </p>
+      </div>
+    </div>
+
+      <!-- Right Section-->
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="w-100" style="max-width: 450px; padding: 3rem;">
+          <a href="javascript:history.back()" class="text-decoration-none mb-4 d-inline-block text-muted">
+            <i class="bi bi-chevron-left me-1"></i> Back
+          </a>
+
+         
+
+          <h4 class="fw-bold mb-2">OTP Verification</h4>
+          <!--p class="text-muted  mb-4">Enter the 6-digit code sent to {{ destination|default:"your email" }}.</p>-->
+          <p class="text-muted medium">
+            {% if otp_method == "phone" %}
+              Enter the 6-digit code sent to your phone number {{ destination }}.
+            {% else %}
+              Enter the 6-digit code sent to your email {{ destination }}.
+            {% endif %}
+          </p>
+          
+
+          <form method="POST" action="{% url 'enter_otp' %}">
+            {% csrf_token %}
+            <div class="d-flex justify-content-between mb-4">
+              <input type="text" name="otp" maxlength="6" class="form-control form-control-lg text-center" placeholder="••••••" required style="letter-spacing: 0.5rem; font-size: 1.5rem;" />
+            </div>
+            <button type="submit" class="btn  w-100 text-white" style="background-color:#33b8aa;">Verify</button>
+          </form>
+
+          <div class="text-center mt-3">
+            <span class="medium">Didn't receive the code? <a href="{% url 'resend_otp' %}" class="text-primary">Resend OTP</a></span>
+            <span class="medium">Or <a href="{% url 'forgot_password' %}" class="text-danger">Reset your password</a> instead</span>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Layout -->
+<section class="d-block d-md-none p-4">
+  <a href="javascript:history.back()" class="text-decoration-none text-muted d-inline-block mb-3">
+    <i class="bi bi-chevron-left me-1"></i> Back
+  </a>
+
+  <h5 class="fw-bold">OTP Verification</h5>
+  <!--p class="text-muted small">Enter the 6-digit code sent to your email.</p>-->
+
+  <p class="text-muted medium">
+    {% if otp_method == "phone" %}
+      Enter the 6-digit code sent to your phone number {{ destination }}.
+    {% else %}
+      Enter the 6-digit code sent to your email {{ destination }}.
+    {% endif %}
+  </p>
+  
+
+  <form method="POST" action="{% url 'enter_otp' %}">
+    {% csrf_token %}
+    <input type="text" name="otp" maxlength="6" class="form-control form-control-lg text-center mb-3" placeholder="••••••" required>
+    <button type="submit" class="btn  w-100" style="color:#33b8aa;">Verify</button>
+  </form>
+
+  <p class="text-center mt-3 small">
+    Didn't receive the code? <a href="{% url 'resend_otp' %}" class="text-primary">Resend OTP</a>
+  </p>
+</section>
+{% endblock %}
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const inputs = document.querySelectorAll(".otp-input");
+      const otpFullInput = document.getElementById("otpFullInput");
+      const form = document.getElementById("otpForm");
+  
+      inputs.forEach((input, index) => {
+        input.addEventListener("input", (e) => {
+          const value = e.target.value;
+          if (value.length === 1 && index < inputs.length - 1) {
+            inputs[index + 1].focus();
+          }
+  
+         
+          collectOtpValue();
+        });
+  
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Backspace" && !input.value && index > 0) {
+            inputs[index - 1].focus();
+          }
+        });
+      });
+  
+      function collectOtpValue() {
+        let otp = "";
+        inputs.forEach(input => otp += input.value);
+        otpFullInput.value = otp;
+      }
+  
+      form.addEventListener("submit", (e) => {
+        collectOtpValue();
+        const otp = otpFullInput.value;
+        if (otp.length !== 6) {
+          e.preventDefault();
+          alert("Please enter a 6-digit OTP.");
+        }
+      });
+    });
+  </script>
+  

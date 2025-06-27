@@ -1,0 +1,400 @@
+{% extends 'base.html' %}
+
+{%load static%}
+
+{% block title %}Home - OnTap{% endblock %}
+
+
+
+{% block extra_css %}
+<link rel="stylesheet" href ="{% static 'css/bootstrap.min.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!--hero section-->
+
+<section class="hero-section py-5" 
+   style="
+  background: url('{% static 'assets/img/lines.png' %}') no-repeat center center;
+  background-size: cover;
+  min-height: 300px;
+  position: relative;
+  z-index: 1;
+">
+  <div class="container text-center">
+
+    <div class="text-center mb-2">
+      <span class="badge rounded-pill bg-light text-dark fw-medium px-3 py-2" style="font-size: 14px; color: #5f6368; border: 1px solid #ccc;">
+        <img src="{% static 'assets/img/tag.png' %}" alt="Quick answers" style="height: 18px;">
+    Transparent Plans
+      </span>
+    </div>
+
+    <!-- Title and Subtitle -->
+    <h1 class="fw-bold display-7 mb-3 text-dark">About OnTap – Where Simplicity<br>Meets Connection</h1>
+    <p class=" text-muted mb-4">We power seamless networking, built for how modern teams work</p>
+
+    <!-- Tabs/Menu -->
+    <ul class="nav justify-content-center border-0 mb-3">
+      <li class="nav-item mx-2">
+        <!--a class="nav-link active fw-semibold text-dark" href="#company">Company</a>-->
+        <!--a class="nav-link active custom-active fw-semibold text-dark" href="#company">Company</a>-->
+        <a href="#" class="tab-link-active " data-tab="company-section">Company</a>
+
+
+      </li>
+      <li class="nav-item mx-2">
+        <!--a class="nav-link fw-semibold text-dark" href="#team">Our Team</a>-->
+        <a href="{% url 'our_team' %}" class="tab-link" data-tab="team-section">Our Team</a>
+
+      </li>
+      <li class="nav-item mx-2">
+        <!--a class="nav-link fw-semibold text-dark" href="#crm">CRM Integrations</a>-->
+        <a href="{% url 'crm_integrations' %}" class="tab-link" data-tab="crm-section">CRM Integrations</a>
+
+      </li>
+      <li class="nav-item mx-2">
+        <!--a class="nav-link fw-semibold text-dark" href="#journey">Our Journey</a>-->
+        <a href="{% url 'our_journey' %}" class="tab-link" data-tab="journey-section">Our Journey</a>
+
+      </li>
+    </ul>
+
+   
+    
+
+  </div>
+</section>
+
+<div id="company-section" class="tab-pane active">
+
+<section class="py-5 bg-light" data-aos="fade-up" data-aos-delay="200">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left Column: Text and Stats -->
+      <div class="col-lg-6 ">
+        <h2 class="fw-bold mb-3" style="color:black;">Our Mission</h2>
+        <p class="mb-4 text-muted">
+          At OnTap, we’re on a mission to transform how professionals connect in the digital age.
+          We believe business relationships should be seamless, meaningful, and productive.
+        </p>
+        <p class="mb-4 text-muted">
+          Founded in 2018, we’ve grown from a small startup to serving over 25,000 users worldwide.
+          Our innovative platform combines digital business cards, smart NFC technology, and powerful CRM integrations
+          to create the ultimate business connection solution.
+        </p>
+
+        <div class="row text-center g-3">
+          <div class="col-6 col-sm-6 col-md-6 mb-3 shadow-sm  " style="background-color: #F8FCFB;">
+            <h4 class="fw-bold " style="color:#17AE9E;">10,000+</h4>
+            <p class="small " style="color:#555555;">Active Users</p>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 mb-3 shadow-sm" style="background-color: #F8FCFB;">
+            <h4 class="fw-bold " style="color:#17AE9E;">100+</h4>
+            <p class="small text-muted">Countries</p>
+          </div>
+
+         
+          
+          
+          <div class="col-6 col-sm-6 col-md-6 mb-3 shadow-sm" style="background-color: #F8FCFB;">
+            <h4 class="fw-bold " style="color:#17AE9E;">15+</h4>
+            <p class="small text-muted">CRM Integrations</p>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 mb-3 shadow-sm" style="background-color: #F8FCFB; ">
+            <h4 class="fw-bold " style="color:#17AE9E;">4.8/5+</h4>
+            <p class="small text-muted">Customer Rating</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Image + Testimonial -->
+      <div class="col-lg-6 text-center mt-4 mt-lg-0">
+        <div class="position-relative" >
+          <img src="{% static 'assets/img/image.png' %}" alt="Team Photo" class="img-fluid rounded shadow-sm" style="width: 350px; height: auto;" >
+          
+          <!-- Gradient Quote Box -->
+               <div class="position-absolute start-0 ms-3 p-3 rounded text-white"
+     style="background-color: #17AE9E; width: 70%; bottom: -20px; z-index: 5; left:20px;">
+     
+
+
+
+            <p class="mb-1 small">"Connecting professionals through innovative technology"</p>
+            <p class="mb-0 fw-semibold small">- Thaddeus Onindi, CEO & Founder</p>
+          </div>
+        </div>
+      </div>
+
+
+      
+      
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="py-5 bg-light" data-aos="fade-up" data-aos-delay="200">
+  <div class="container text-center">
+    <div class="text-center mb-2">
+      <span class="badge rounded-pill bg-light text-dark fw-medium px-3 py-2" style="font-size: 14px; color: #5f6368; border: 1px solid #ccc;">
+        <img src="{% static 'assets/img/worldwide.png' %}" alt="Quick answers" style="height: 18px;">
+    Trusted Worldwide
+      </span>
+    </div>
+   
+
+    <div class="mb-4">
+      <h2 class="fw-bold text-dark text-center">What Our Customers Say</h2>
+    
+      <div class="d-flex justify-content-center align-items-center gap-3 mt-3">
+        
+        <!-- Column 1: Avatars -->
+        <div class="d-flex gap-2">
+          <img src="{% static 'assets/img/customer_1.png' %}" class="rounded-circle" width="40">
+          <img src="{% static 'assets/img/customer_2.png' %}" class="rounded-circle" width="40">
+          <img src="{% static 'assets/img/customer_3.png' %}" class="rounded-circle" width="40">
+        </div>
+    
+        <!-- Column 2: Stars and User Count -->
+        <div class="d-flex flex-column align-items-start">
+          <div class="text-dark small" style="color:#ffcc60;">⭐⭐⭐⭐⭐ 4.8+</div>
+          <div class="text-dark small">From 10,000+ Users</div>
+        </div>
+    
+      </div>
+    </div>
+    
+
+    <!-- Stats Row -->
+    <div class="row text-center mb-5 g-5 ">
+      <div class="col-md-3 col-6 mb-3 shadow-sm border rounded p-3  "  style="background-color: #f8fcfb;">
+        <h4 class="fw-bold" style="color:#17AE9E;">1500+</h4>
+        <div class="text-muted small">Smart Cards Issued</div>
+      </div>
+      <div class="col-md-3 col-6 mb-3 shadow-sm border rounded p-3 " style="background-color: #f8fcfb;">
+        <h4 class=" fw-bold" style="color:#17AE9E;">10,000+</h4>
+        <div class="text-muted small">Events Lead Capture</div>
+      </div>
+      <div class="col-md-3 col-6 mb-3 shadow-sm border rounded p-3" style="background-color: #f8fcfb;">
+        <h4 class=" fw-bold" style="color:#17AE9E;">85%</h4>
+        <div class="text-muted small">Fortune 500 Adoption</div>
+      </div>
+      <div class="col-md-3 col-6 mb-3 shadow-sm border rounded p-3" style="background-color: #f8fcfb;">
+        <h4 class=" fw-bold" style="color:#17AE9E;">98%</h4>
+        <div class="text-muted small">Customer Satisfaction</div>
+      </div>
+    </div>
+
+    
+    
+
+    
+    
+
+    <!-- Testimonials -->
+   
+
+      <div class="row g-3">
+        <div class="col-md-4 hover-lift">
+          <div class="border rounded p-3 h-100 shadow-sm bg-white">
+            <p class="mb-3 text-md-start">We tripled captured leads at trade fairs using OnTap's live badge scanner.</p>
+      
+            <!-- Flex container for image and text -->
+            <div class="d-flex align-items-center">
+              <img src="{% static 'assets/img/Container.png' %}" alt="Adaeze A"
+                   class="img-fluid rounded-circle me-3"
+                   style="width: 60px; height: 60px; object-fit: cover;">
+                   
+              <div>
+                <div class="fw-semibold">Adaeze A</div>
+                <div class="text-muted small">Events Manager, Global SaaS</div>
+              </div>
+            </div>
+      
+          </div>
+        </div>
+      
+      
+      <div class="col-md-4 hover-lift">
+        <div class="border rounded p-3 h-100 shadow-sm bg-white">
+          <p class="mb-2 text-md-start">Editing my digital card on the fly made every interaction count and helped me stay prepared always.</p>
+           <!-- Flex container for image and text -->
+           <div class="d-flex align-items-center">
+            <img src="{% static 'assets/img/George.png' %}" alt="George"
+                 class="img-fluid rounded-circle me-3"
+                 style="width: 60px; height: 60px; object-fit: cover;">
+                 
+            <div>
+              <div class="fw-semibold">George Orwell</div>
+              <div class="text-muted small">Creative Freelancer</div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      <div class="col-md-4 hover-lift">
+        <div class="border rounded p-3 h-100 shadow-sm bg-white">
+          <p class="mb-2 text-md-start">OnTap’s SSO provisioning fit right into our enterprise tech stack and made team onboarding effortless.</p>
+           <!-- Flex container for image and text -->
+           <div class="d-flex align-items-center">
+            <img src="{% static 'assets/img/chuka.png' %}" alt="Adaeze A"
+                 class="img-fluid rounded-circle me-3"
+                 style="width: 60px; height: 60px; object-fit: cover;">
+                 
+            <div>
+              <div class="fw-semibold">Chuka D</div>
+              <div class="text-muted small">IT Admin,Fintech Corp</div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+
+    <!-- CTA -->
+    <div class="mt-4">
+      <a href="#read-more" class="btn custom-plan-btn me-2 text-white fw-semibold px-4 py-2 " style="background-color:#17AE9E;">
+
+        Read More →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5" data-aos="fade-up"; data-aos-delay="200">
+  <div class="container">
+
+    <div class="text-center mb-2">
+      <span class="badge rounded-pill bg-light text-dark fw-medium px-3 py-2" style="font-size: 14px; color: #5f6368; border: 1px solid #ccc;">
+        <img src="{% static 'assets/img/idea.png' %}" alt="Quick answers" style="height: 18px;">
+    Quick Answers
+      </span>
+    </div>
+
+    <h2 class="fw-semibold text-center mb-4"> FAQS</h2>
+    <!--p class="text-center text-muted mb-5">Quick Answers</p>-->
+
+   
+    
+
+  <div class="accordion" id="faqAccordion">
+
+    <!-- Q1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          Do recipients need an app?
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          No, OnTap works seamlessly via tap or scan. There’s no need for the other person to download or install any app to access your information.
+        </div>
+      </div>
+    </div>
+  
+    <!-- Q2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+          aria-expanded="false" aria-controls="collapseTwo">
+          Can I revoke access to my shared card?
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, you can instantly deactivate or update your card to control who sees your information.
+        </div>
+      </div>
+    </div>
+  
+    <!-- Q3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+          aria-expanded="false" aria-controls="collapseThree">
+          Does it work offline?
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          OnTap’s NFC card works offline for tap-based sharing. QR code scanning requires minimal internet access to load your profile.
+        </div>
+      </div>
+    </div>
+  
+    <!-- Q4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+          aria-expanded="false" aria-controls="collapseFour">
+          Can I update my digital business card after creating it?
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Absolutely. You can edit your profile, links, photo, and contact details anytime from your dashboard.
+        </div>
+      </div>
+    </div>
+
+
+  
+    <!-- Q5 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+          aria-expanded="false" aria-controls="collapseFive">
+          What CRMs does OnTap integrate with?
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+        data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          OnTap integrates with top CRM platforms like HubSpot, Salesforce, and Zoho to streamline lead capture and contact syncing.
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  </div>
+
+  
+</div>
+  
+</section>
+
+
+
+
+{% endblock %}
+
+<script>
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const tabPanes = document.querySelectorAll('.tab-pane');
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      // Remove active from all
+      tabLinks.forEach(l => l.classList.remove('active'));
+      tabPanes.forEach(p => p.classList.remove('active'));
+
+      // Add active to clicked link and its section
+      this.classList.add('active');
+      const tabId = this.getAttribute('data-tab');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+</script>

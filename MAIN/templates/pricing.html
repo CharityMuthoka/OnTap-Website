@@ -1,0 +1,426 @@
+{% extends 'base.html' %}
+{% block content %}
+{%load static%}
+
+<!--section class="py-5" style="background: linear-gradient(to right, #17AE9E, #DCF1EA);">-->
+ 
+
+  <section class="py-5" style="
+  background: url('{% static 'assets/img/lines.png' %}') no-repeat center center;
+  background-size: cover;
+  min-height: 300px;
+  position: relative;
+  z-index: 1;
+">
+  <div class="container text-center mb-4">
+    <span class="badge rounded-pill bg-white text-dark fw-medium px-3 py-2" style="font-size: 14px; color: #5f6368; border: 1px solid #ccc;">
+      <img src="{% static 'assets/img/tag.png' %}" alt="Transparent plans" style="height: 18px;">
+  Transparent Plans
+    </span>
+  </div>
+
+ 
+  <div class="container">
+    <div class="row justify-content-center align-items-center text-center" style="min-height: 150px;"> 
+      <div class="col-md-6">
+        <h2 class="fw-semibold mb-3">Pricing built to fit all <br>types of Teams</h2>
+        <p class="text-dark">Smart features, simple pricing for solo users to full teams.</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+  
+  </div>
+</div>
+
+<!--pricing plans>-->
+<section class="py-5 bg-white" id="pricing" data-aos="fade-up" data-aos-delay="200">
+  <div class="container text-center">
+    <!--h3 class="fw-bold mb-4">Our Pricing Plans</h3>-->
+
+    <!--tabs-->
+    <div class="d-flex justify-content-center m-4">
+      <button class="btn custom-plan-btn me-2">Monthly</button>
+      <!--button class="btn btn-outline-secondary me-2">Half-Yearly</button>-->
+      <button class="btn custom-plan-btn me-2 text-white" style="background-color:#17AE9E;">Half-Yearly</button>
+
+      <button class="btn custom-plan-btn me-2">Yearly</button>
+    </div>
+    <div class="row g-4">
+      <!--Basic plan-->
+      <div class="col-md-3 d-flex">
+        <div class="border rounded p-4 h-100 shadow-sm hover-lift d-flex flex-column justify-content-between w-100">
+          
+          <!-- Title & Subtitle -->
+          <div>
+            <h5 class="fw-bold text-md-start" style="color:#4B5563;">Basic</h5>
+            <p class="text-muted text-start mb-2"><small>For Individuals</small></p>
+      
+            <!-- Price -->
+            <p class="text-start fw-bold mb-1">
+              KSH. 0 <span style="font-weight: normal; font-size: 0.85rem;">/Lifetime</span>
+            </p>
+      
+            <!-- Feature intro -->
+            <p class="text-start mb-2">Design your digital business card with:</p>
+      
+            <!-- Features list -->
+            <ul class="list-styled small text-start mb-4">
+              <li>10 Digital Business Card</li>
+              <li>One-Click Sharing</li>
+              <li>Update Details Anytime</li>
+              <li>Analytics (30 Days)</li>
+              <li>Basic Lead Capture & 10 Saved Leads</li>
+            </ul>
+          </div>
+      
+          <!-- CTA Button -->
+          <a href="#" class="btn w-100 customm-plan-btn me-2" >Get Started</a>
+      
+        </div>
+      </div>
+      
+
+      <!--PayperCard-->
+      <div class="col-md-3 d-flex">
+        <div class="border rounded p-4 h-100 shadow-sm hover-lift d-flex flex-column justify-content-between w-100">
+      
+          <!-- Title & Subtitle -->
+          <div>
+            <h5 class="fw-bold text-start" style="color:#4B5563;">Pay-Per-Card</h5>
+            <p class="text-start text-muted mb-2"><small>Individuals/Start-ups</small></p>
+      
+            <!-- Price -->
+            <p class="text-start fw-bold mb-1">
+              KSH. 5 <span style="font-weight: normal; font-size: 0.85rem;">/Per Card</span>
+            </p>
+      
+            <!-- Feature intro -->
+            <p class="text-start mb-2">Design your Digital Business Card with:</p>
+      
+            <!-- Features -->
+            <ul class="list-styled small text-start mb-4">
+              <li>10 Digital Business Card</li>
+              <li>Automated Follow-ups</li>
+              <li>See All Leads Captured</li>
+              <li>Full Analytics (Lifetime)</li>
+              <li>Fully Customizable Digital Cards</li>
+              <li>AI Business Card Scanner</li>
+              <li>Geo Tag Location</li>
+              <li>Calendar Booking</li>
+              <li>E-signature</li>
+            </ul>
+          </div>
+      
+          <!-- CTA Button -->
+          <a href="#" class="btn w-100 customm-plan-btn me-2">Get Started</a>
+      
+        </div>
+      </div>
+      
+      <!--Pro(Most Popular)-->
+
+      <div class="col-md-3 d-flex">
+          <!--div class="border rounded p-4 h-100 shadow-sm hover-lift d-flex flex-column justify-content-between w-100" style="background: linear-gradient(0deg, #17AE9E 0%, #FFFFFF 100%);">-->
+            <div class="border rounded p-4 h-100 shadow-sm hover-lift d-flex flex-column justify-content-between w-100" 
+     style="background: linear-gradient(0deg, rgba(23, 174, 158, 0.5) 0%, #FFFFFF 100%);">
+
+
+      
+          <!-- Title & Subtitle -->
+          <div>
+            <h5 class="fw-bold text-start" style="color:#4B5563;">Pro</h5>
+            <p class="text-start text-muted mb-2"><small>For Business</small></p>
+      
+            <!-- Price -->
+            <p class="text-start fw-bold mb-1">
+              KSH. 250 <span style="font-weight: normal; font-size: 0.85rem;">/Per Month</span>
+            </p>
+      
+            <!-- Description -->
+            <p class="text-start mb-2">Starter Plan grants you access to exclusive features:</p>
+      
+            <!-- Features List -->
+            <ul class="list-styled  small text-start mb-4">
+              <li>10 Digital Business Cards</li>
+              <li>Unlimited Digital Business Cards</li>
+              <li>See all Leads Captured</li>
+              <li>Full Analytics (Lifetime)</li>
+              <li>Customize Your Apple/Google Wallet Pass</li>
+              <li>Switch between Digital Cards</li>
+              <li>Fully Customizable Digital Cards</li>
+              <li>AI Business Card Scanner</li>
+              <li>Calendar Booking</li>
+              <li>Priority Support</li>
+            </ul>
+          </div>
+      
+          <!-- CTA Button -->
+          <a href="#" class="btn w-100 custom-plan-btn me-2  text-white" style="background-color:#17AE9E;">Get Started</a>
+      
+        </div>
+      </div>
+      
+
+<!--Enterprises--For Teams-->
+<div class="col-md-3 d-flex">
+  <div class="border rounded p-4 h-100 shadow-sm card hover-lift d-flex flex-column justify-content-between w-100">
+
+    <!-- Title & Subtitle -->
+    <div>
+      <h5 class="fw-bold text-start" style="color:#4B5563;">Enterprise</h5>
+      <p class="text-start text-muted mb-2"><small>For Teams</small></p>
+
+      <!-- Pricing -->
+      <p class="text-start fw-bold mb-1">Contact Us</p>
+
+      <!-- Description -->
+      <p class="text-start mb-2">All in Pro Plus:</p>
+
+      <!-- Features -->
+      <ul class="list-styled small text-start mb-4">
+        <li>FREE Tap To Share NFC Business Card (Worth up to KES 10,000)</li>
+        <li>2 Yearly NFC Business Card Replacements (Worth up to KES 20,000)</li>
+        <li>Done For You Design -We Design Your Business Card For Free</li>
+        <li>Priority Support</li>
+        <li>Excel Import/Export</li>
+        <li>API Integration</li>
+      </ul>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="#" class="btn w-100 customm-plan-btn me-2" >Get Started</a>
+
+  </div>
+</div>
+
+  </section>
+
+    
+
+
+<!-- Section: Trusted by Smart Connectors -->
+<section class="py-5 bg-light" data-aos="fade-up" data-aos-delay="200">
+  <div class="container text-center">
+
+    <!-- Heading -->
+    <h3 class="fw-bold mb-3">Join 10,000+ Smart Connectors</h3>
+    <div class="d-flex justify-content-center mb-5">
+      <div style="height: 3px; width: 60px; background-color: #17AE9E; margin-right: 10px;"></div>
+      <div style="height: 3px; width: 60px; background-color: #17AE9E;"></div>
+    </div>
+
+    <!-- Swiper Carousel -->
+    <div class="swiper partnerSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/bg1.png' %}" height="50" class="img-fluid" alt="Partner 1">
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/bg2.png' %}" height="50" class="img-fluid" alt="Partner 2">
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/bg3.png' %}" height="50" class="img-fluid" alt="Partner 3">
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/bg4.png' %}" height="50" class="img-fluid" alt="Partner 4">
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="swiper-slide">
+          <img src="{% static 'assets/img/bg5.png' %}" height="50" class="img-fluid" alt="Partner 5">
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="py-5" data-aos="fade-up"; data-aos-delay="200">
+  <div class="container">
+    <div class="text-center mb-2">
+      <span class="badge rounded-pill bg-light text-dark fw-medium px-3 py-2" style="font-size:14px; color:#5f6368; border:1px solid #ccc;">
+        <img src="{% static 'assets/img/idea.png' %}" alt="Quick answers" style="height:18px;">
+        Smart Networking
+      </span>
+    </div>
+  </div>
+
+  <section class="py-5" style="background-color: #F9FAFB;" data-aos="fade-up"; data-aos-delay="200">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5" style="color: #111827;">Benefits of Using OnTap <BR>Cards</h2>
+  
+      <div class="row align-items-center">
+        <!-- Left Text Blocks -->
+        <div class="col-md-4 text-start mb-4">
+          <div class="mb-5 shadow-sm p-2 hover-lift" >
+            <h5 class="fw-bold" style="color:#17ae9e;">01</h5>
+            <h6 class="fw-semibold" style="color:#111827;">Tap or Scan to Share</h6>
+            <p style="color:#4B5563;">Share your contact details instantly using NFC or QR — no apps, no delay. Perfect for in-person meetings and real-time networking.</p>
+          </div>
+          <div>
+            <div class="shadow-sm p-2 hover-lift">
+            <h5 class="fw-bold " style="color:#17ae9e;">03</h5>
+            <h6 class="fw-semibold" style="color:#111827;">Team Dashboard & Roles</h6>
+            <p style="color:#4B5563;">Assign smart cards, set team roles, and manage updates — all from one simple dashboard built for growing teams.</p>
+          </div>
+        </div>
+        </div>
+  
+        <!-- Center Image -->
+        <!--div class="col-md-4 mb-4 text-center">
+          <img src="{% static 'assets/img/image_container.png' %}" class="img-fluid" alt="OnTap Cards" style="max-height: 300px;">
+        </div>-->
+
+        <div class="col-md-4 mb-4 text-center ">
+          <img src="{% static 'assets/img/image_container.png' %}" 
+               class="img-fluid rotating-card" 
+               alt="OnTap Cards" 
+               style="max-height: 300px;">
+        </div>
+        
+  
+        <!-- Right Text Blocks -->
+        <div class="col-md-4 text-start mb-4">
+          <div class="mb-5 shadow-sm p-2 hover-lift">
+            <h5 class="fw-bold " style="color:#17ae9e;">02</h5>
+            <h6 class="fw-semibold" style="color:#111827;">Custom QR & Branding</h6>
+            <p style="color:#4B5563;">Add your logo, brand colors, and job role to every card. Your card reflects your identity and makes a strong first impression.</p>
+          </div>
+          <div>
+            <div class="shadow-sm p-2 hover-lift">
+            <h5 class="fw-bold " style="color:#17ae9e;">04</h5>
+            <h6 class="fw-semibold" style="color:#111827;">Real-Time Updates & Analytics</h6>
+            <p style="color:#4B5563;">Make instant edits to your profile, track scans, and monitor engagement. No need to reprint or resend anything — ever.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</section>
+  
+
+      <section class="py-5" data-aos="fade-up"; data-aos-delay="200">
+        <div class="container">
+    
+          <div class="text-center mb-2">
+            <span class="badge rounded-pill bg-light text-dark fw-medium px-3 py-2" style="font-size: 14px; color: #5f6368; border: 1px solid #ccc;">
+              <img src="{% static 'assets/img/idea.png' %}" alt="Quick answers" style="height: 18px;">
+          Quick Answers
+            </span>
+          </div>
+    
+          <h2 class="fw-bold text-center mb-4"> FAQS</h2>
+          <!--p class="text-center text-muted mb-5">Quick Answers</p>-->
+    
+         
+          
+    
+        <div class="accordion" id="faqAccordion">
+    
+          <!-- Q1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Do recipients need an app?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                No, OnTap works seamlessly via tap or scan. There’s no need for the other person to download or install any app to access your information.
+              </div>
+            </div>
+          </div>
+        
+          <!-- Q2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                aria-expanded="false" aria-controls="collapseTwo">
+                Can I revoke access to my shared card?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Yes, you can instantly deactivate or update your card to control who sees your information.
+              </div>
+            </div>
+          </div>
+        
+          <!-- Q3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                aria-expanded="false" aria-controls="collapseThree">
+                Does it work offline?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                OnTap’s NFC card works offline for tap-based sharing. QR code scanning requires minimal internet access to load your profile.
+              </div>
+            </div>
+          </div>
+        
+          <!-- Q4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                aria-expanded="false" aria-controls="collapseFour">
+                Can I update my digital business card after creating it?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Absolutely. You can edit your profile, links, photo, and contact details anytime from your dashboard.
+              </div>
+            </div>
+          </div>
+    
+     
+        
+          <!-- Q5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                aria-expanded="false" aria-controls="collapseFive">
+                What CRMs does OnTap integrate with?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+              data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                OnTap integrates with top CRM platforms like HubSpot, Salesforce, and Zoho to streamline lead capture and contact syncing.
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        
+      </section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}
+

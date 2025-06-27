@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OnTap </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link href="{% static 'assets/vendor/aos/aos.css '%}" rel="stylesheet">
+
+<link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white py-3 shadow-sm">
+  <div class="container">
+    
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'assets/img/image_10.png' %}" alt="OnTap Logo" style="height: 40px;">
+    </a>
+
+    <!-- Toggler -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    
+
+    <!-- Collapsible Menu -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Center: Navigation Links -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4">
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">Home</a>
+        </li>
+        <!--li class="nav-item">
+          <a class="nav-link" href="{% url 'shop' %}">Shop Cards</a>
+        </li>-->
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'solutions' %}" id="solutionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Solutions
+          </a>
+         
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'resources' %}" id="resourcesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Resources
+          </a>
+        </li>
+        
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'pricing' %}">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about_us' %}">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+        
+        
+      </ul>
+
+      <!-- Right: Login and CTA -->
+      <div class="d-flex gap-2 align-items-center">
+        <a href="{% url 'sign_in' %}" class="btn btn-link text-dark text-decoration-none">Login</a>
+        <a href="{% url 'register_account' %}" class="btn  rounded px-4" style="background-color:#17ae9e; color:white;">Get Started Free</a>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Your custom JS (only ONCE) -->
+<script src="{% static 'assets/js/main.js' %}"></script>

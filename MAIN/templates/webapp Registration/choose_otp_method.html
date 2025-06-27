@@ -1,0 +1,145 @@
+
+
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block title %}OTP Verification Method{% endblock %}
+
+{% block content %}
+
+<!-- Desktop View -->
+<section class="register-section d-none d-md-block">
+  <div class="container-fluid g-0">
+    <div class="row g-0 d-flex">
+
+      <!--  Quote section -->
+      <div class="col-md-6 d-flex align-items-start justify-content-center flex-column"
+      style="background: url('{% static 'assets/img/Rectangle_36.png' %}') center center / cover no-repeat; padding: 2rem;">
+      <div class="mb-4">
+        <img src="{% static 'assets/img/logo.png' %}" alt="OnTap Logo" style="height: 40px;">
+      </div>
+      <div style="margin-top: 6rem;">
+        <img src="{% static 'assets/img/quotes.png' %}" alt="quotes"
+                   style="height:20px; width:20px; border-radius:50%; margin-bottom: 16px;">
+                   
+        <p class="text-white">I love how easy it was to customize my OnTap card. It matches my brand perfectly, and people are always impressed when I share my details with just a tap!"</p>
+        <p class="text-white fw-bold">Melissa K., Creative Director, MascotAI
+          <img src="{% static 'assets/img/circle_check.png' %}" alt="Melissa Photo" style="height: 20px; width: 20px; border-radius: 50%; margin-left: 8px;">
+
+        </p>
+      </div>
+    </div>
+      <!-- Right Form -->
+      <div class="col-md-6 d-flex align-items-center justify-content-center bg-white">
+        <div class="p-4" style="max-width: 400px; width: 100%;">
+          <a href="javascript:history.back()" class="text-decoration-none fw-bold d-flex align-items-center" style="color:#b0bbc7;">
+            <i class="bi bi-chevron-left me-1"></i> Back
+          </a>
+
+          <div class="alert d-flex align-items-center mt-3" style="color:#da8587;" role="alert">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <div>
+              <strong>Attention!</strong> Please select where to receive verification code.
+            </div>
+          </div>
+
+          <h4 class="fw-bold">OTP Verification</h4>
+          <p class="text-muted medium">Select where you'd like to receive your verification code.</p>
+
+  
+
+<!-- Email Option -->
+<form method="POST" action="{% url 'choose_otp_method' %}">
+  {% csrf_token %}
+  <input type="hidden" name="method" value="email">
+  <input type="hidden" name="destination_email" value="{{ request.session.email }}">
+  <div class="border rounded p-3 mb-3">
+    <label class="form-label">Send code to my email</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="bi bi-envelope" style="color:#5fc7bc;"></i></span>
+      <input type="email" class="form-control" value="{{ request.session.email }}" disabled>
+    </div>
+    <button type="submit" class="btn w-100 mt-2 text-white" style="background-color:#33b8aa;">Send OTP to Email</button>
+  </div>
+</form>
+
+<!-- Phone Option -->
+<form method="POST" action="{% url 'choose_otp_method' %}">
+  {% csrf_token %}
+  <input type="hidden" name="method" value="phone">
+  <input type="hidden" name="destination_phone" value="{{ request.session.phone }}">
+  <div class="border rounded p-3 mb-3">
+    <label class="form-label">Send code to my phone</label>
+    <div class="input-group">
+      <span class="input-group-text"><i class="bi bi-phone" style="color:#33b8aa;"></i></span>
+      <input type="text" class="form-control" value="{{ request.session.phone }}" disabled>
+    </div>
+    <button type="submit" class="btn w-100 mt-2 text-white" style="background-color:#33b8aa;">Send OTP to phone</button>
+  </div>
+</form>
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile View -->
+<section class="d-block d-md-none">
+  <!-- image section -->
+  <div style="background: url('{% static 'assets/img/Rectangle_36.png' %}') center center / cover no-repeat; height: 150px; position: relative;">
+    <a href="javascript:history.back()" class="position-absolute top-0 start-0 m-3 text-white fs-5">
+      <i class="bi bi-chevron-left"></i>
+    </a>
+  </div>
+
+  <!-- OTP Method Content -->
+  <div class="p-4 bg-white">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <h5 class="fw-bold mb-0">OTP Verification</h5>
+      <a href="#" class="text-primary text-decoration-none small fw-medium d-flex align-items-center">
+        Help <i class="bi bi-question-circle ms-1"></i>
+      </a>
+    </div>
+    <p class="text-muted small">Select where you would like to receive a verification code</p>
+
+    <!-- Email Option -->
+    <form method="POST" action="{% url 'choose_otp_method' %}">
+      {% csrf_token %}
+      <input type="hidden" name="method" value="email">
+      <div class="border rounded p-3 mb-3">
+        <label for="email" class="form-label">Send code to my email</label>
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="bi bi-envelope" style="color:#5fc7bc;"></i>
+          </span>
+          <input type="email" name="destination_email" id="email" class="form-control" placeholder="yourname@example.com" required>
+        </div>
+        <button type="submit" class="btn w-100 mt-2 text-white" style="background-color:#33b8aa;">Send OTP to Email</button>
+      </div>
+    </form>
+
+    <!-- Phone Option -->
+    <form method="POST" action="{% url 'choose_otp_method' %}">
+      {% csrf_token %}
+      <input type="hidden" name="method" value="phone">
+      <div class="border rounded p-3 mb-3">
+        <label for="phone" class="form-label">Send code to my Phone</label>
+        <div class="input-group">
+          <span class="input-group-text">
+            <i class="bi bi-phone" style="color:#33b8aa;"></i>
+          </span>
+          <input type="phone" name="destination_phone" id="phone" class="form-control" placeholder="+254 7******" required>
+        </div>
+        <button type="submit" class="btn  w-100 mt-2 text-white" style="background-color:#33b8aa;" >Send OTP to phone</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+{% endblock %}
+
+
+
+

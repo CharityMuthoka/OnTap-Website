@@ -1,0 +1,67 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block title %}Enter OTP{% endblock %}
+
+{% block content %}
+
+
+  <section class="register-section">
+    <div class="container-fluid g-0">
+      <div class="row g-0 d-flex  ">
+
+
+
+<!-- Left section-->
+<div class="col-md-6 d-none d-md-flex align-items-start justify-content-center flex-column"
+style="background: url('{% static 'assets/img/Rectangle_36.png' %}') center center / cover no-repeat; position: relative; padding: 2rem;">
+
+<!-- Logo -->
+<div class="mb-4">
+<img src="{% static 'assets/img/logo.png' %}" alt="OnTap Logo" style="height: 40px;">
+</div>
+
+<!-- Quote Section -->
+
+<div style="margin-top: 6rem;">
+<p class="text-white">"I love how easy it was to customize my OnTap card. It matches my brand perfectly, and people are always impressed when I share my details with just a tap!"</p>
+<p class="text-white fw-bold">Melissa K., Creative Director, MascotAI</p>
+</div>
+</div>
+
+  <!-- Right Form -->
+  <div class="col-md-6 d-flex align-items-center justify-content-center bg-white">
+    <div class="p-4" style="max-width: 400px; width: 100%;">
+
+      <a href="javascript:history.back()" class="text-decoration-none fw-bold d-flex align-items-center">
+        <i class="bi bi-chevron-left me-1"></i> Back
+      </a>
+      
+      <div class="alert alert-danger d-flex align-items-center mt-3" role="alert">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        <div>
+          <strong>Invalid OTP !</strong> Please Enter OTP sent to  {{destination}}.
+        </div>
+      </div>
+    
+
+      <h4 class="fw-bold">OTP Verification</h4>
+      <p class="text-muted small">Enter the 6-digit code sent to p*******5@gmail.com.</p>
+
+      <form>
+        <div class="d-flex justify-content-between mb-3">
+          {% for i in "123456" %}
+          <input type="text" maxlength="1" class="form-control text-center mx-1" style="width: 45px;">
+          {% endfor %}
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Verify</button>
+      </form>
+
+      <p class="small text-muted mt-3">
+        Didn't receive the code? <a href="#">Resend OTP</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

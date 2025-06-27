@@ -1,0 +1,82 @@
+<!-- dashboard.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dashboard - OnTap{% endblock %}
+
+{% block content %}
+<section class="py-5" style="background-color: #C0FFE7; min-height: 100vh;">
+  <div class="container">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3">
+        <div class="bg-white p-4 rounded shadow-sm">
+          <h5 class="fw-bold mb-4">OnTap</h5>
+          <ul class="nav flex-column gap-3">
+            <li><a href="#" class="nav-link text-dark fw-semibold">Dashboard</a></li>
+            <li><a href="#" class="nav-link text-muted">My Cards</a></li>
+            <li><a href="#" class="nav-link text-muted">Connections</a></li>
+            <li><a href="#" class="nav-link text-muted">Insights</a></li>
+            <li><a href="#" class="nav-link text-muted">Brand Center</a></li>
+            <li><a href="#" class="nav-link text-muted">Team Management</a></li>
+            <li><a href="#" class="nav-link text-muted">Integrations</a></li>
+            <li><a href="#" class="nav-link text-muted">Settings</a></li>
+          </ul>
+          <div class="mt-4 text-center">
+            <a href="#" class="btn btn-warning btn-sm">Upgrade</a>
+            <a href="{% url 'logout' %}" class="btn btn-outline-danger">Logout</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Content -->
+      <div class="col-md-9">
+        <div class="bg-white p-5 rounded shadow-sm">
+          <h3 class="fw-bold mb-4">Welcome, {{ request.session.email|default:"Team" }}
+          </h3>
+
+          <div class="row g-4">
+            <!-- Get Started -->
+            <div class="col-md-4">
+              <h6 class="fw-bold">Get Started</h6>
+              <a href="#" class="btn btn-outline-success btn-sm mt-2">Set Up Business Profile</a>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="col-md-4">
+              <h6 class="fw-bold">Next Steps</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#">Input Business Name</a></li>
+                <li><a href="#">Add Logo</a></li>
+                <li><a href="#">Contact Info</a></li>
+                <li><a href="#">Social Media Links</a></li>
+                <li><a href="#">Office Address</a></li>
+              </ul>
+            </div>
+
+            <!-- More Actions -->
+            <div class="col-md-4">
+              <h6 class="fw-bold">More Actions</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#">Change Contact Person</a></li>
+                <li><a href="#">Add Number of Staff</a></li>
+                <li><a href="#">User Permissions</a></li>
+                <li><a href="#">Team Member Roles</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Recent Connections -->
+          <div class="mt-5">
+            <h6 class="fw-bold">Recent Connections</h6>
+            <p class="text-muted small">Looks like you haven’t added any contacts yet. Start building your network!</p>
+            <a href="#" class="btn btn-success btn-sm">Get Started</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

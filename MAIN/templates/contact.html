@@ -1,0 +1,303 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Contact - OnTap{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href ="{% static 'css/bootstrap.min.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  
+  
+ 
+
+  <section class="py-5" style="background-color: #F6FFFE;" data-aos="fade-up"; data-aos-delay="200">
+    <div class="container">
+      <div class="text-center mb-2">
+        <span class="badge rounded-pill bg-light text-dark fw-medium px-3 py-2" style="font-size: 14px; color: #5f6368; border: 1px solid #ccc;">
+          <img src="{% static 'assets/img/chat.png' %}" alt="Quick answers" style="height: 18px;">
+      Talk to Us
+        </span>
+      </div>
+      <!-- Title and Subtitle -->
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Have a Question?<br>We’re Here to Help</h2>
+        <p class="text-muted">Reach out to our team for support, feedback, or partnership inquiries.</p>
+      </div>
+  
+      <div class="row g-5">
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <h5 class="mb-3 py-3" style="color:#000000;">Contact Form</h5>
+          <form method="POST" action="#">
+            {% csrf_token %}
+            <div class="mb-3">
+              <input type="text" name="name" class="form-control" style="max-width:350px;" placeholder="Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" name="email" class="form-control" style="max-width:350px;" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+              <textarea name="message" class="form-control"  rows="4" style="max-width:350px;" placeholder="Type your message" required></textarea>
+            </div>
+            <button type="submit" class="btn text-white" style="background-color: #17ae9e;">Submit</button>
+          </form>
+        </div>
+  
+        <!-- Contact Information -->
+        <div class="col-lg-6">
+          <h5 class="mb-3 py-3" style="color:#000000;">Contact Information</h5>
+          
+
+          <div class="mb-3 d-flex align-items-start justify-content-between" style="background-color: #ffffff;">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-envelope me-2 fs-5 text-dark"></i>
+              <span id="emailText" style="color:#0C0C0C";>info@ontapke.com</span>
+            </div>
+          
+            <div class="ms-3 d-flex align-items-center">
+              <button class="btn btn-sm btn-light border copy-btn" data-copy="emailText">
+                <img src="{% static 'assets/img/email_copy.png' %}" alt="Copy" class="copy-img" style="height: 16px; width: 16px;">
+              </button>
+              <span class="copied-text ms-2 d-none text-success fw-semibold small">✓ Copied</span>
+            </div>
+          </div>
+          
+
+          
+
+          <div class="mb-3 d-flex align-items-start justify-content-between" style="background-color: #ffffff;">
+            <div class="d-flex align-items-center">
+              <i class="bi bi-telephone fs-5 me-2 text-dark"></i>
+              <span id="phoneText" style="color:#0C0C0C";>+254 725 748 655</span>
+            </div>
+            <button class="btn btn-sm btn-light border ms-3 copy-btn" data-copy="phoneText">
+              <img src="{% static 'assets/img/email_copy.png' %}" alt="Copy" class="copy-img" style="height: 16px; width: 16px;">
+              <span class="copied-text ms-2 d-none text-success fw-semibold small">✓ Copied</span>
+            </button>
+          </div>
+          
+          <div class="mb-3 d-flex align-items-start justify-content-between" style="background-color: #ffffff;">
+          <div class="mb-3 d-flex align-items-start" >
+            <i class="bi bi-geo-alt me-3 text-dark fs-5"></i>
+            <span style="color:#0C0C0C";>Office: Kijitonyama Residence 2nd Floor, Ngong Road</span>
+          </div>
+          <button class="btn btn-sm btn-light border ms-3 copy-btn" data-copy="phoneText">
+            <img src="{% static 'assets/img/email_copy.png' %}" alt="Copy" class="copy-img" style="height: 16px; width: 16px;">
+            <span class="copied-text ms-2 d-none text-success fw-semibold small">✓ Copied</span>
+          </button>
+        </div>
+
+        
+
+      <div class="mb-3 d-flex align-items-start justify-content-between" style="background-color: #ffffff;">
+        <div class="d-flex align-items-start">
+          <i class="bi bi-clock me-3 text-dark fs-5"></i>
+          <span id="hoursText" style="color:#0C0C0C";>Monday to Friday: 9 AM to 6 PM</span>
+        </div>
+      
+        <div class="ms-3 d-flex align-items-center">
+          <button class="btn btn-sm btn-light border copy-btn" data-copy="hoursText">
+            <img src="{% static 'assets/img/email_copy.png' %}" alt="Copy" class="copy-img" style="height: 16px; width: 16px;">
+          </button>
+          <span class="copied-text ms-2 d-none text-success fw-semibold small">✓ Copied</span>
+        </div>
+      </div>
+    </section>
+      
+  
+      <!-- Partner Logos -->
+     
+
+  <section class="py-5 bg-light" data-aos="fade-up" data-aos-delay="200">
+    <div class="container text-center">
+  
+      <!-- Heading -->
+      <h3 class="fw-bold mb-3">Join 10,000+ Smart Connectors</h3>
+      <div class="d-flex justify-content-center mb-5">
+        <div style="height: 3px; width: 60px; background-color: #17AE9E; margin-right: 10px;"></div>
+        <div style="height: 3px; width: 60px; background-color: #17AE9E;"></div>
+      </div>
+  
+      <!-- Swiper Carousel -->
+      <div class="swiper partnerSwiper">
+        <div class="swiper-wrapper">
+  
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/bg1.png' %}" height="50" class="img-fluid" alt="Partner 1">
+          </div>
+  
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/bg2.png' %}" height="50" class="img-fluid" alt="Partner 2">
+          </div>
+  
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/bg3.png' %}" height="50" class="img-fluid" alt="Partner 3">
+          </div>
+  
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/bg4.png' %}" height="50" class="img-fluid" alt="Partner 4">
+          </div>
+  
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/bg5.png' %}" height="50" class="img-fluid" alt="Partner 5">
+          </div>
+  
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+
+  
+
+  <section class="py-5" data-aos="fade-up"; data-aos-delay="200">
+    <div class="container">
+
+      <div class="text-center mb-2">
+        <span class="badge rounded-pill bg-light text-dark fw-medium px-3 py-2" style="font-size: 14px; color: #5f6368; border: 1px solid #ccc;">
+          <img src="{% static 'assets/img/idea.png' %}" alt="Quick answers" style="height: 18px;">
+      Quick Answers
+        </span>
+      </div>
+
+      <h2 class="fw-bold text-center mb-4"> FAQS</h2>
+      <!--p class="text-center text-muted mb-5">Quick Answers</p>-->
+
+     
+      
+
+    <div class="accordion" id="faqAccordion">
+
+      <!-- Q1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+            aria-expanded="true" aria-controls="collapseOne">
+            Do recipients need an app?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            No, OnTap works seamlessly via tap or scan. There’s no need for the other person to download or install any app to access your information.
+          </div>
+        </div>
+      </div>
+    
+      <!-- Q2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+            aria-expanded="false" aria-controls="collapseTwo">
+            Can I revoke access to my shared card?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, you can instantly deactivate or update your card to control who sees your information.
+          </div>
+        </div>
+      </div>
+    
+      <!-- Q3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            Does it work offline?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            OnTap’s NFC card works offline for tap-based sharing. QR code scanning requires minimal internet access to load your profile.
+          </div>
+        </div>
+      </div>
+    
+      <!-- Q4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+            aria-expanded="false" aria-controls="collapseFour">
+            Can I update my digital business card after creating it?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Absolutely. You can edit your profile, links, photo, and contact details anytime from your dashboard.
+          </div>
+        </div>
+      </div>
+
+ 
+    
+      <!-- Q5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+            aria-expanded="false" aria-controls="collapseFive">
+            What CRMs does OnTap integrate with?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+          data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            OnTap integrates with top CRM platforms like HubSpot, Salesforce, and Zoho to streamline lead capture and contact syncing.
+          </div>
+        </div>
+      </div>
+    
+    </div>
+    
+  </section>
+
+
+  
+  
+  
+
+{% endblock %}
+
+
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-copy');
+      const textToCopy = document.getElementById(targetId)?.innerText || '';
+
+      if (!textToCopy) return;
+
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const copiedMsg = this.parentElement.querySelector('.copied-msg');
+        copiedMsg.classList.remove('d-none');
+
+        setTimeout(() => {
+          copiedMsg.classList.add('d-none');
+        }, 1500);
+      }).catch(err => {
+        console.error('Copy failed:', err);
+      });
+    });
+  });
+</script>
+
